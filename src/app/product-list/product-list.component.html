@@ -1,0 +1,23 @@
+
+<div class="container">
+  <div class="row mt3">
+    <div class="col-11">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand">Rechercher un produit</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" #keywordInput>
+          <button class="btn btn-outline-success" type="submit" (click)="getProductFromKeywordSearch(keywordInput.value)">Search</button>
+        </form>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3" *ngFor="let product of products">
+      <app-product-item [product]="product" ></app-product-item>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="container mt-5">
+  <h2>Your Cart</h2>
+  <div class="row">
+    <div class="col-11">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Thumbnail</th>
+          <th scope="col">Name</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let productCommand of productCommands; let i = index">
+          <th scope="row">{{i}}</th>
+          <td><img src="{{productCommand.product.thumbnail}}" height="50px" width="50px" class="img-fluid rounded-circle" alt="img"></td>
+          <td>{{productCommand.product.title}}</td>
+          <td><input type="number" class="form-control w-25" [ngModel]="productCommand.quantity"></td>
+          <td><button class="btn btn-danger" (click)="removeFromCart(productCommand.product)">Remove</button></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
